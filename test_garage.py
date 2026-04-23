@@ -25,3 +25,11 @@ def test_enter_garage_valueError_if_carID_already_exists():
         "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
         }
         enter_garage(garageDict, "Rat67", 18)
+
+def test_enter_garage_typeError_if_entryHour_notInt():
+    with pytest.raises(TypeError):
+        garageDict = {
+        "capacity": 10,   # total number of spots
+        "cars": {}         # car_id -> entry_hour (int)
+        }
+        enter_garage(garageDict, "Rat67", "18.0")

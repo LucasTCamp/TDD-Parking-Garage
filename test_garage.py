@@ -1,4 +1,4 @@
-from garage import enter_garage
+from garage import enter_garage, exit_garage
 import pytest
 
 def test_enter_garage():
@@ -33,3 +33,11 @@ def test_enter_garage_typeError_if_entryHour_notInt():
         "cars": {}         # car_id -> entry_hour (int)
         }
         enter_garage(garageDict, "Rat67", "18.0")
+
+def test_exit_garage_works():
+    garageDict = {
+        "capacity": 3,   # total number of spots
+        "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
+        }
+    exit_garage(garageDict, "Rat67")
+    assert "Rat67" not in garageDict["cars"].keys()

@@ -1,4 +1,5 @@
 from garage import enter_garage
+import pytest
 
 def test_enter_garage():
     garageDict = {

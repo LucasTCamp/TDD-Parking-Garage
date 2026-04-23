@@ -6,4 +6,4 @@ def test_enter_garage():
     "cars": {}         # car_id -> entry_hour (int)
     }
     enter_garage(garageDict, "Bugatti7", 13)
-    assert "Bugatti7" in garageDict[cars].keys()
+    assert "Bugatti7" in garageDict["cars"].keys()

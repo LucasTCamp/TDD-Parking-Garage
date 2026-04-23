@@ -41,3 +41,11 @@ def test_exit_garage_works():
         }
     exit_garage(garageDict, "Rat67")
     assert "Rat67" not in garageDict["cars"].keys()
+
+def test_exit_garage_keyError_if_carId_not_in_garage():
+    with pytest.raises(KeyError):
+        garageDict = {
+        "capacity": 10,   # total number of spots
+        "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
+        }
+        exit_garage(garageDict, "Rat67")

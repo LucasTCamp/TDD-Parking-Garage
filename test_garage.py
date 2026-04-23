@@ -48,4 +48,4 @@ def test_exit_garage_keyError_if_carId_not_in_garage():
         "capacity": 10,   # total number of spots
         "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
         }
-        exit_garage(garageDict, "Rat67")
+        exit_garage(garageDict, "Rat")

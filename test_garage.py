@@ -62,4 +62,4 @@ def test_get_available_spots_is_full():
         "capacity": 1,   # total number of spots
         "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
         }
-    assert 0
+    assert get_available_spots(garageDict) == 0

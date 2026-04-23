@@ -1,4 +1,4 @@
-from garage import enter garage
+from garage import enter_garage
 
 def test_enter_garage():
     garageDict = {

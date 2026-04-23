@@ -1,4 +1,4 @@
-from garage import enter_garage, exit_garage
+from garage import enter_garage, exit_garage, get_available_spots
 import pytest
 
 def test_enter_garage():
@@ -49,3 +49,10 @@ def test_exit_garage_keyError_if_carId_not_in_garage():
         "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
         }
         exit_garage(garageDict, "Rat")
+
+def test_get_available_spots_works():
+    garageDict = {
+        "capacity": 10,   # total number of spots
+        "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
+        }
+    assert get_available_spots(garageDict) == 9

@@ -63,3 +63,6 @@ def test_get_available_spots_is_full():
         "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
         }
     assert get_available_spots(garageDict) == 0
+
+def test_calculate_fee_works():
+    assert calculate_fee(3, 2) == 6

@@ -1,4 +1,4 @@
-from garage import enter_garage, exit_garage, get_available_spots
+from garage import enter_garage, exit_garage, get_available_spots, calculate_fee
 import pytest
 
 def test_enter_garage():

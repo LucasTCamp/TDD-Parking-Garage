@@ -17,3 +17,11 @@ def test_enter_garage_valueError_if_full():
         "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
         }
         enter_garage(garageDict, "Bugatti7", 13)
+
+def test_enter_garage_valueError_if_carID_already_exists():
+    with pytest.raises(ValueError):
+        garageDict = {
+        "capacity": 3,   # total number of spots
+        "cars": {"Rat67": 15}         # car_id -> entry_hour (int)
+        }
+        enter_garage(garageDict, "Rat67", 18)

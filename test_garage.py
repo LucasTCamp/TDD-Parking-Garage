@@ -72,7 +72,7 @@ def test_calculate_fee_works(hours, rate, expected):
     assert calculate_fee(hours, rate) == expected
 
 @pytest.mark.parametrize("hours, rate", [(-3, 2), (4, -2)])
-def test_calcuate_fee_valueError_if_negative_input():
+def test_calcuate_fee_valueError_if_negative_input(hours, rate):
     with pytest.raises(ValueError):
         calculate_fee(hours, rate)
 

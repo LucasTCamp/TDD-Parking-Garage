@@ -70,3 +70,9 @@ def test_get_available_spots_is_full():
 @pytest.mark.parametrize("hours, rate, expected", [(3, 2, 6.00), (8, 2.5, 20.00), (5.5, 2, 11.00)])
 def test_calculate_fee_works(hours, rate, expected):
     assert calculate_fee(hours, rate) == expected
+
+@pytest.mark.parametrize("hours, rate, [(-3, 2), (4, -2)])
+def test_calcuate_fee_valueError_if_negative_input():
+    with pytest.raises(ValueError):
+        calculate_fee(hours, rate)
+
